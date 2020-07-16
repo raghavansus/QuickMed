@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'symptomFinder.dart';
+
+
 void main() {
   runApp(MyApp());
 }
@@ -102,13 +105,19 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .headline4,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () => {
+        Navigator.push(context,
+        MaterialPageRoute(builder: (context) => symptomFinder()))
+        },
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
